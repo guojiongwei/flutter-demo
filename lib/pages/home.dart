@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/list.dart';
+import 'package:myapp/pages/sdk_test/batterylevel.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -22,7 +23,14 @@ class Home extends StatelessWidget {
           onPressed: (){
             Navigator.pushNamed(context, 'list');
           },
-        )
+        ),
+        FlatButton(
+          child: Text('路由表去生命周期页面'),
+          onPressed: (){
+            Navigator.pushNamed(context, 'life_cycle');
+          },
+        ),
+        GetBatterylevel()
       ]),
     );
   }

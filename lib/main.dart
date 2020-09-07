@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/navgator/tab_navgator.dart';
 import 'package:myapp/pages/list.dart';
+import 'package:myapp/pages/life_cycle.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       ),
       home:TabNavigator(),
       routes: {
-        'list': (context) => List()
+        'list': (context) => List(),
+        'life_cycle': (context) => LifeCycle(),
       },
     );
   }
