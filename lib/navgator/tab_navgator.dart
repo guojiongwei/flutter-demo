@@ -1,8 +1,15 @@
+/*
+ * @Author: 郭炯韦
+ * @Date: 2020-09-08 08:47:26
+ * @LastEditTime: 2020-09-28 17:52:12
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \flutter-demo\lib\navgator\tab_navgator.dart
+ */
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/home.dart';
-import 'package:myapp/pages/kind.dart';
-import 'package:myapp/pages/cart.dart';
-import 'package:myapp/pages/user.dart';
+import 'package:myapp/pages/home_page.dart';
+import 'package:myapp/pages/check_page.dart';
+import 'package:myapp/pages/user_page.dart';
 
 class TabNavigator extends StatefulWidget {
   @override
@@ -10,22 +17,18 @@ class TabNavigator extends StatefulWidget {
 }
 
 class _TabNavigatorState extends State<TabNavigator> {
-
   int _currentIndex = 0;
   final _defaultColor = Colors.grey;
-  final _activeColor = Colors.blue;
-    final PageController _controller = PageController(
+  final _activeColor = Color.fromARGB(255, 36, 178, 155);
+  final PageController _controller = PageController(
     initialPage: 0,
   );
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _controller,
-        children: <Widget>[
+      body: PageView(controller: _controller, children: <Widget>[
         Home(),
-        Kind(),
-        Cart(),
+        Check(),
         User(),
       ]),
       bottomNavigationBar: BottomNavigationBar(
@@ -39,21 +42,18 @@ class _TabNavigatorState extends State<TabNavigator> {
           type: BottomNavigationBarType.fixed,
           items: [
             _bottomItem('首页', Icons.home, 0),
-            _bottomItem('分类', Icons.search, 1),
-            _bottomItem('购物车', Icons.camera_alt, 2),
-            _bottomItem('我的', Icons.account_circle, 3),
+            _bottomItem('审核', Icons.format_list_bulleted, 1),
+            _bottomItem('我的', Icons.account_circle, 2),
           ]),
     );
   }
-  _bottomItem(String title, IconData icon, int index){
+
+  _bottomItem(String title, IconData icon, int index) {
     return BottomNavigationBarItem(
-      icon: Icon(
-        icon,
-        color: _currentIndex == index ? _activeColor : _defaultColor
-      ),
-      title: Text(title, style: TextStyle(
-        color: _currentIndex == index ? _activeColor : _defaultColor
-      ) )
-    );
+        icon: Icon(icon,
+            color: _currentIndex == index ? _activeColor : _defaultColor),
+        title: Text(title,
+            style: TextStyle(
+                color: _currentIndex == index ? _activeColor : _defaultColor)));
   }
 }
