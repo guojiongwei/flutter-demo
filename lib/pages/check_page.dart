@@ -1,8 +1,8 @@
 /*
- * @Author: your name
+ * @Author: 郭炯韦
  * @Date: 2020-09-08 08:47:26
- * @LastEditTime: 2020-09-28 18:07:29
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-09-29 15:47:47
+ * @LastEditors:  郭炯韦
  * @Description: In User Settings Edit
  * @FilePath: \flutter-demo\lib\pages\check.dart
  */
@@ -17,7 +17,7 @@ class Check extends StatefulWidget {
 class _Check extends State<Check> {
   @override
   void initState() {
-    print(checkListData);
+    // print(checkListData);
   }
 
   @override
@@ -28,6 +28,7 @@ class _Check extends State<Check> {
             '我的审核',
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
           ),
+          centerTitle: true,
         ),
         body: ListView(children: <Widget>[
           Container(

@@ -1,8 +1,8 @@
 /*
- * @Author: your name
+ * @Author: 郭炯韦
  * @Date: 2020-09-08 08:47:26
- * @LastEditTime: 2020-09-28 16:15:19
- * @LastEditors: your name
+ * @LastEditTime: 2020-09-29 15:48:18
+ * @LastEditors:  郭炯韦
  * @Description: In User Settings Edit
  * @FilePath: \flutter-demo\lib\pages\user.dart
  */
@@ -21,7 +21,12 @@ class _User extends State<User> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('我的')),
+      appBar: AppBar(
+          title: Text(
+            '我的',
+            style: TextStyle(color: Colors.white),
+          ),
+          centerTitle: true),
       body: Column(children: <Widget>[
         Text('我的页面'),
         FlatButton(

@@ -1,13 +1,13 @@
 /*
- * @Author: your name
+ * @Author: 郭炯韦
  * @Date: 2020-09-08 08:47:26
- * @LastEditTime: 2020-09-28 17:37:00
+ * @LastEditTime: 2020-09-29 17:48:30
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 首页
  * @FilePath: \flutter-demo\lib\pages\home.dart
  */
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/list_page.dart';
+import 'package:myapp/pages/widget_page/text_page.dart';
 // import 'package:myapp/pages/sdk_test/batterylevel.dart';
 
 class Home extends StatelessWidget {
@@ -15,25 +15,50 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-        '首页',
-        style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-      )),
+        title: Text(
+          '首页',
+          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+        ),
+        centerTitle: true,
+        brightness: Brightness.light,
+      ),
       body: Column(children: <Widget>[
-        Text('首页页面'),
         FlatButton(
-          child: Text('push去列表页面'),
+          child: Text('text组件'),
+          onPressed: () {
+            Navigator.pushNamed(context, 'text_page');
+          },
+        ),
+        FlatButton(
+          child: Text('push去Text组件页面'),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return List();
+              return TextPage();
             }));
           },
         ),
-
         FlatButton(
-          child: Text('路由表去列表页面'),
+          child: Text('button组件'),
           onPressed: () {
-            Navigator.pushNamed(context, 'list');
+            Navigator.pushNamed(context, 'button_page');
+          },
+        ),
+        FlatButton(
+          child: Text('图片image组件'),
+          onPressed: () {
+            Navigator.pushNamed(context, 'image_page');
+          },
+        ),
+        FlatButton(
+          child: Text('表单组件'),
+          onPressed: () {
+            Navigator.pushNamed(context, 'form_page');
+          },
+        ),
+        FlatButton(
+          child: Text('进度条组件'),
+          onPressed: () {
+            Navigator.pushNamed(context, 'progress_page');
           },
         ),
         FlatButton(
