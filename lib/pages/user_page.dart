@@ -1,8 +1,8 @@
 /*
  * @Author: 郭炯韦
  * @Date: 2020-09-08 08:47:26
- * @LastEditTime: 2020-09-29 15:48:18
- * @LastEditors:  郭炯韦
+ * @LastEditTime: 2020-09-30 17:14:27
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \flutter-demo\lib\pages\user.dart
  */
@@ -25,6 +25,8 @@ class _User extends State<User> {
           title: Text(
             '我的',
             style: TextStyle(color: Colors.white),
+            maxLines: 30,
+            overflow: TextOverflow.ellipsis,
           ),
           centerTitle: true),
       body: Column(children: <Widget>[
@@ -38,7 +40,7 @@ class _User extends State<User> {
                   "https://read.xiaoshuo1-sm.com/novel/i.php?do=is_caterank&sort=updateTime&page=1&size=10&firstCate=%E9%83%BD%E5%B8%82%E5%B0%8F%E8%AF%B4&platform=3&userId=8000000&filterMigu=1&timestamp=1599233256&imei=&sn=&tk=&p=3");
               print(response.data.toString());
               setState(() {
-                data = '1231212';
+                data = response.data.toString();
               });
             }),
         Image.asset('images/type_channelgroup.png'),

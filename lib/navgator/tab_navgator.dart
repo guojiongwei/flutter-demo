@@ -1,8 +1,8 @@
 /*
  * @Author: 郭炯韦
  * @Date: 2020-09-08 08:47:26
- * @LastEditTime: 2020-09-28 17:52:12
- * @LastEditors:  郭炯韦
+ * @LastEditTime: 2020-09-30 17:19:21
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \flutter-demo\lib\navgator\tab_navgator.dart
  */
@@ -26,11 +26,18 @@ class _TabNavigatorState extends State<TabNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(controller: _controller, children: <Widget>[
-        Home(),
-        Check(),
-        User(),
-      ]),
+      body: PageView(
+          controller: _controller,
+          onPageChanged: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          children: <Widget>[
+            Home(),
+            Check(),
+            User(),
+          ]),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
